@@ -3,10 +3,28 @@
 Title: <%= @article.title %>
 Text:  <%= @article.text %>
 
+<h2>Comment</h2>
+<% @article.comments.each do |comment| %>
+<p>
+  <strong>Commenter: </strong>
+  <%= comment.commenter %>
+</p>
+<p>
+  <strong>Body: </strong>
+  <%= comment.body %>
+</p>
+<% end %>
 <%= form_for([@article, @article.comments.build]) do |f| %>
 <p>
   <%= f.label :commenter %>
   <%= f.text_field :commenter %>
+</p>
+<p>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+</p>
+<p>
+  <%= f.submit %>
 </p>
 <% end %>
 <br>
