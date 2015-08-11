@@ -2,5 +2,12 @@
 
 Title: <%= @article.title %>
 Text:  <%= @article.text %>
+
+<%= form_for([@article, @article.comments.build]) do |f| %>
+<p>
+  <%= f.label :commenter %>
+  <%= f.text_field :commenter %>
+</p>
+<% end %>
 <br>
 <%= link_to 'Back', articles_path %>

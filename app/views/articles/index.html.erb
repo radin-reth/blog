@@ -6,9 +6,9 @@
     <h3><%= article.title %></h3>
     <p><%= article.text %></p>
     <p>
-      <%= link_to 'show', article_path(article) %> |
-      <%= link_to 'edit', edit_article_path(article) %> |
-      <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'show', article %> |
+      <%= link_to 'edit', [:edit, article] %> |
+      <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' } %>
     </p>
   </li>
 <% end %>
